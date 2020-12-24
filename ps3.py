@@ -170,7 +170,7 @@ def update_hand(hand, word):
             new_hand[letter] -= 1
 
     for letter in hand:
-        if new_hand[letter] == 0:
+        if new_hand[letter] <= 0:
             new_hand.pop(letter)
 
     return new_hand
