@@ -170,7 +170,7 @@ def update_hand(hand, word):
             new_hand[letter] -= 1
 
     for letter in hand:
-        if new_hand[letter] == 0:
+        if new_hand[letter] <= 0:
             new_hand.pop(letter)
 
     return new_hand
@@ -394,7 +394,8 @@ def play_game(word_list):
     substitution = True
     replay_hand = ''
     replay_hand_used = False
-    hand = deal_hand(HAND_SIZE)
+    # hand = deal_hand(HAND_SIZE)
+    hand = {'*': 1, 'o': 1, 'e': 1, 'h': 1, 'r': 1, 's': 2, 'z': 1}
     # Ask user for input
     hands_number = int(ask_user("Enter total number of hands: ", "You have to enter an integer.",
                                 lambda x: x.isdecimal() and int(x) > 0))
