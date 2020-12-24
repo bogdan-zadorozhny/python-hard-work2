@@ -394,8 +394,7 @@ def play_game(word_list):
     substitution = True
     replay_hand = ''
     replay_hand_used = False
-    # hand = deal_hand(HAND_SIZE)
-    hand = {'*': 1, 'o': 1, 'e': 1, 'h': 1, 'r': 1, 's': 2, 'z': 1}
+    hand = deal_hand(HAND_SIZE)
     # Ask user for input
     hands_number = int(ask_user("Enter total number of hands: ", "You have to enter an integer.",
                                 lambda x: x.isdecimal() and int(x) > 0))
